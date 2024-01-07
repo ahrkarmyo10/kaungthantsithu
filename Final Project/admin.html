@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="admin.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="Pure_Dent_Logo.png" alt="logo">
+                </span>
+
+                <div class="text header-text">
+                    <span class="name">Pure Dent</span>
+                    <span class="pro">Dental Clinic</span>
+                </div>
+            </div>
+
+            <i class="bx bx-chevron-right toggle"></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class="bx bx-home-alt icon"></i>
+                            <span class="text nav-text">Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="CheckA.php">
+                            <i class="bx bx-calendar-check icon"></i>
+                            <span class="text nav-text">Check Appointment</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class="bx bx-list-ul icon"></i>
+                            <span class="text nav-text">Services</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="SView.php">View Services</a></li>
+                            <li><a href="Aservice.php">Add Service</a></li>
+                            <li><a href="Dservice.php">Remove Service</a></li>
+                            <li><a href="Eservice.php">Edit Service</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class="bx bx-user-circle icon"></i>
+                            <span class="text nav-text">Doctors</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="Vdoctor.php">View Doctors</a></li>
+                            <li><a href="Adoctor.php">Add Doctor</a></li>
+                            <li><a href="Ddoctor.php">Remove Doctor</a></li>
+                            <li><a href="Edoctor.php">Edit Doctor</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="Vreview.php">
+                            <i class="bx bx-chat icon"></i>
+                            <span class="text nav-text">Read Review</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bottom-content">
+                <li class="">
+                    <a href="Logout.php">
+                        <i class="bx bx-log-out icon"></i>
+                        <span class="text nav-text">Logout</span>
+                    </a>
+                </li>
+
+                <li class="mode">
+                    <div class="moon-sun">
+                        <i class="bx bx-moon icon moon"></i>
+                        <i class="bx bx-sun icon sun"></i>
+                    </div>
+                    <span class="mode-text text">Dark Mode</span>
+
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+            </div>
+        </div>
+    </nav>
+
+    <section class="home">
+        <div class="text">Dashboard</div>
+        <div class="back">
+            <img src="Site Stats-amico.png" alt="" width="500" height="500">
+        </div>
+        <div class="msg">Welcome!</div>
+    </section>
+
+    <script>
+        const body = document.querySelector("body"),
+        sidebar = body.querySelector(".sidebar"),
+        toggle = body.querySelector(".toggle"),
+        
+        modeSwitch = body.querySelector(".toggle-switch"),
+        modeText = body.querySelector(".mode-text");
+
+        toggle.addEventListener("click", ()=>{
+            sidebar.classList.toggle("close");
+        });
+
+        
+
+        modeSwitch.addEventListener("click", ()=>{
+            body.classList.toggle("dark");
+
+            if(body.classList.contains("dark")){
+                modeText.innerText = "Light Mode"
+            }else{
+                modeText.innerText = "Dark Mode"
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        navLinks.forEach(function (navLink) {
+            const dropdownMenu = navLink.querySelector(".dropdown-menu");
+            
+            navLink.addEventListener("mouseenter", function () {
+                if (dropdownMenu) {
+                    dropdownMenu.style.display = "block";
+                }
+            });
+
+            navLink.addEventListener("mouseleave", function () {
+                if (dropdownMenu) {
+                    dropdownMenu.style.display = "none";
+                }
+            });
+        });
+    });
+    </script>
+</body>
+</html>

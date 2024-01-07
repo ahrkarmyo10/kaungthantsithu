@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="user.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="Pure_Dent_Logo.png" alt="logo">
+                </span>
+
+                <div class="text header-text">
+                    <span class="name">Pure Dent</span>
+                    <span class="pro">Dental Clinic</span>
+                </div>
+            </div>
+
+            <i class="bx bx-chevron-right toggle"></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+                
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class="bx bx-home-alt icon"></i>
+                            <span class="text nav-text">Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="PID.php">
+                            <i class="bx bx-file-find icon"></i>
+                            <span class="text nav-text">Search Patient ID</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="Mappoint.php">
+                            <i class="bx bx-notepad icon"></i>
+                            <span class="text nav-text">Make Appointment</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="Usview.php">
+                            <i class="bx bx-list-ul icon"></i>
+                            <span class="text nav-text">Services</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="Udview.php">
+                            <i class="bx bx-user-circle icon"></i>
+                            <span class="text nav-text">Doctors</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="review.php">
+                            <i class="bx bxs-message-add icon"></i>
+                            <span class="text nav-text">Write Review</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="Cappoint.php">
+                            <i class="bx bxs-calendar-x icon"></i>
+                            <span class="text nav-text">Cancel Appointment</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bottom-content">
+                <li class="">
+                    <a href="Alogout.php">
+                        <i class="bx bx-log-out icon"></i>
+                        <span class="text nav-text">Logout</span>
+                    </a>
+                </li>
+
+                <li class="mode">
+                    <div class="moon-sun">
+                        <i class="bx bx-moon icon moon"></i>
+                        <i class="bx bx-sun icon sun"></i>
+                    </div>
+                    <span class="mode-text text">Dark Mode</span>
+
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+            </div>
+        </div>
+    </nav>
+
+    <section class="home">
+        <div class="text">Dashboard</div>
+        <div class="back">
+            <img src="Welcome-amico.png" alt="" width="500" height="500">
+        </div>
+        <div class="msg">Welcome to Pure Dent!</div>
+    </section>
+
+    <script>
+        const body = document.querySelector("body"),
+        sidebar = body.querySelector(".sidebar"),
+        toggle = body.querySelector(".toggle"),
+        
+        modeSwitch = body.querySelector(".toggle-switch"),
+        modeText = body.querySelector(".mode-text");
+
+        toggle.addEventListener("click", ()=>{
+            sidebar.classList.toggle("close");
+        });
+
+
+        modeSwitch.addEventListener("click", ()=>{
+            body.classList.toggle("dark");
+
+            if(body.classList.contains("dark")){
+                modeText.innerText = "Light Mode"
+            }else{
+                modeText.innerText = "Dark Mode"
+            }
+        });
+    </script>
+</body>
+</html>
